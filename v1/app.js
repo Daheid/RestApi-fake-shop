@@ -4,11 +4,17 @@ import express from "express"
 import cookieParser from "cookie-parser"
 import logger from "morgan"
 
+//conexion con la bd
+import conection from "./databases/db.js"
+
 //rutas
 import indexRouter from "./routes/index.js"
 
 //Express
 var app = express()
+
+//conectar con la bd
+conection()
 
 app.use(logger("dev"))
 app.use(express.json())
